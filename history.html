@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Service" ng-app="app" class="">
+<head>
+    <title>History - Invoice Generator</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="robots" content="noindex,nofollow" />    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/apple-icon-57x57.4993556f.png"/>
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/apple-icon-60x60.905de02d.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/apple-icon-72x72.5de76b7c.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/apple-icon-76x76.e913bf09.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/apple-icon-114x114.51406b4f.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/apple-icon-120x120.2e6af66b.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/apple-icon-144x144.14ee2c5c.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/apple-icon-152x152.586ea868.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-icon-180x180.93e6994c.png"/>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/android-icon-192x192.dff7e9b3.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.a529098d.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/favicon-96x96.f97ce9a5.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.9a7ddc10.png"/>
+    <link rel="manifest" href="/manifest.json"/>
+    <meta name="msapplication-TileColor" content="#ffffff"/>
+    <meta name="msapplication-TileImage" content="/static/ms-icon-144x144.14ee2c5c.png"/>
+    <meta name="theme-color" content="#ffffff"/>
+
+        <link rel="alternate" media="print" type="application/pdf" title="Click Download Invoice to print" href="/print.pdf" />
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/static/vendor.a0629b64.css" type="text/css" rel="stylesheet" />
+    <link href="/static/app.e8d61644.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/static/vendor.5a97562b.js"></script>
+    <script type="text/javascript" src="/static/app.74da6baf.js"></script>
+    <script src="https://kit.fontawesome.com/9a2d6cc714.js" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-32926931-1');
+        gtag('config', 'G-5NX50Q98PX');
+    </script>
+    <script data-ad-client="ca-pub-5850063729438069" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+    <script type="text/javascript">
+        window.defaultInvoice = {"version":5,"type":"invoice","logo":null,"from":null,"to":null,"ship_to":null,"number":null,"purchase_order":null,"date":null,"payment_terms":null,"due_date":null,"custom_fields":[],"items":[],"currency":"USD","fields":{"discounts":false,"tax":"%","shipping":false},"discounts":0,"tax":0,"shipping":0,"amount_paid":0,"notes":null,"terms":null,"payment_methods":[],"header":"INVOICE","credit_note_header":"CREDIT NOTE","credit_note_number_title":"#","invoice_number_title":"#","to_title":"Bill To","ship_to_title":"Ship To","date_title":"Date","payment_terms_title":"Payment Terms","due_date_title":"Due Date","purchase_order_title":"PO Number","item_header":"Item","quantity_header":"Quantity","unit_cost_header":"Rate","amount_header":"Amount","subtotal_title":"Subtotal","discounts_title":"Discount","tax_title":"Tax","shipping_title":"Shipping","total_title":"Total","amount_paid_title":"Amount Paid","balance_title":"Balance Due","terms_title":"Terms","notes_title":"Notes"};
+    </script>
+
+    </head>
+<body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=635157686501071";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class="background"></div>
+
+    <nav class="navbar navbar-dark navbar-invoiced p-md-0 navbar-expand-lg">
+        <div class="container">
+            <a href="/#/last" class="navbar-brand">
+                Invoice Generator
+            </a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav m-0 ms-sm-5">
+                    <li class="nav-item px-2">
+                        <a href="/help" class="nav-link">
+                            Help
+                        </a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a href="/guide" class="nav-link">
+                            Invoicing Guide
+                        </a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a href="https://invoiced.network/login" class="nav-link">
+                            Sign In
+                        </a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a href="/signup" class="btn btn-primary nav-link px-4 py-1 mt-1 rounded-pill">
+                            Sign Up
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <nav class="navbar navbar-dark navbar-invoiced navbar-secondary fs-3 py-0 d-lg-none">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                    <li class="dropdown-divider"></li>
+                    <li class="nav-item">
+                        <a href="/help" class="nav-link">
+                            Help
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/guide" class="nav-link">
+                            Invoicing Guide
+                        </a>
+                    </li>
+                    <li class="dropdown-divider"></li>
+                    <li class="nav-item">
+                        <a href="https://invoiced.network/login" class="nav-link">
+                            Sign In
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/signup" class="nav-link">
+                            Sign Up
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <div class="container">
+        
+    <div ng-controller="HistoryController">
+        <div ng-include="'/templates/history.html'"></div>
+    </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="category-title">Use Invoice Generator</div>
+                    <ul>
+                        <li>
+                            <a href="/#/last">
+                                Invoice Template
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/help">
+                                How to Use
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://invoiced.network/login">
+                                Sign In
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/signup">
+                                Sign Up
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/release-notes">
+                                Release Notes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/developers">
+                                Developer API
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <div class="category-title">Education</div>
+                    <ul>
+                        <li>
+                            <a href="/guide">
+                                Invoicing Guide
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <ul>
+                        <li class="copyright">
+                            &copy; 2012-2023 Invoice-Generator.com
+                        </li>
+                        <li>
+                            <a href="/terms">
+                                Terms of Use
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <form method="post" action="/csv?source=lite" class="nomargin" id="csv_form" target="_blank">
+        <input id="csv_json" type="hidden" name="json" />
+    </form>
+    <form method="post" action="/pdf?source=lite" class="nomargin" id="pdf_form" target="_blank">
+        <input id="pdf_json" type="hidden" name="json" />
+    </form>
+    <form method="post" action="/ubl?source=lite" class="nomargin" id="ubl_form" target="_blank">
+        <input id="ubl_json" type="hidden" name="json" />
+    </form>
+</body>
+</html>
